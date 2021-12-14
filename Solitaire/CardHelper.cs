@@ -38,9 +38,9 @@ namespace Solitaire
 
             List<int> randIndex = new List<int>();
             int index = 0;
-            while (index < 13)
+            while (index < cards.Count)
             {
-                var randCheck = rand.Next(1, 14);
+                var randCheck = rand.Next(1, 53);
                 bool badNumber = false;
 
                 if (index == 0)
@@ -61,23 +61,34 @@ namespace Solitaire
                     if (!badNumber)
                     {
                         randIndex.Add(randCheck);
+                        //Console.WriteLine(randCheck);
                         index++;
                     }
-
 
                 }
             }
 
-            foreach (var card in cards)
+            foreach (var randCard in randIndex)
             {
-                foreach (var randCard in randIndex)
+                foreach (var card in cards)
                 {
-                    if (cards.IndexOf(card) == randCard)
+                    if(cards.IndexOf(card) == randCard)
                     {
                         shuffledDeck.Add(card);
                     }
                 }
             }
+
+            //foreach (var card in cards)
+            //{
+            //    foreach (var randCard in randIndex)
+            //    {
+            //        if (cards.IndexOf(card) == randCard)
+            //        {
+            //            shuffledDeck.Add(card);
+            //        }
+            //    }
+            //}
 
 
             return shuffledDeck;
