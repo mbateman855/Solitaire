@@ -72,7 +72,7 @@ namespace Solitaire
             {
                 foreach (var card in cards)
                 {
-                    if(cards.IndexOf(card) == randCard)
+                    if((cards.IndexOf(card)+1) == randCard)
                     {
                         shuffledDeck.Add(card);
                     }

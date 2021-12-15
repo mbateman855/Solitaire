@@ -24,12 +24,12 @@ namespace Solitaire
 
         public static void Deal(List<Card> deck)
         {
-            List<Card> columnOne = new List<Card> 
+            List<Card> columnOne = new List<Card>
             {
                 deck[0]
             };
             deck[0].IsFaceUp = true;
-            List<Card> columnTwo = new List<Card> 
+            List<Card> columnTwo = new List<Card>
             {
                 deck[1],
                 deck[2]
@@ -81,7 +81,7 @@ namespace Solitaire
             };
             deck[27].IsFaceUp = true;
             List<Card> stockPile = new List<Card>();
-            for(int i = 28; i < 53; i++)
+            for (int i = 28; i < 52; i++)
             {
                 stockPile.Add(deck[i]);
             }
@@ -90,22 +90,22 @@ namespace Solitaire
             List<Card> suitStackTwo = new List<Card>();
             List<Card> suitStackThree = new List<Card>();
             List<Card> suitStackFour = new List<Card>();
-            //List<List<Card>> allCardLists = new List<List<Card>>
-            //{
-            //    columnOne,
-            //    columnTwo,
-            //    columnThree,
-            //    columnFour,
-            //    columnFive,
-            //    columnSix,
-            //    columnSeven,
-            //    stockPile,
-            //    drawnStockCards,
-            //    suitStackOne,
-            //    suitStackTwo,
-            //    suitStackThree,
-            //    suitStackFour
-            //};
+            List<List<Card>> allCardLists = new List<List<Card>>
+            {
+                columnOne,
+                columnTwo,
+                columnThree,
+                columnFour,
+                columnFive,
+                columnSix,
+                columnSeven,
+                stockPile,
+                drawnStockCards,
+                suitStackOne,
+                suitStackTwo,
+                suitStackThree,
+                suitStackFour
+            };
 
             //foreach (var card in deck)
             //{
@@ -132,6 +132,97 @@ namespace Solitaire
             //suitStackTwo,
             //suitStackThree,
             //suitStackFour
+
+            //Display.DisplayDeal(allCardLists);
+            //Display.TestLayout(allCardArrays);
+            Display.TestLayout(CardListToArrays(allCardLists));
+        }
+
+        public static List<Card[]> CardListToArrays(List<List<Card>> deck)
+        {
+            Card[] columnOne = new Card[30];
+            Card[] columnTwo = new Card[30];
+            Card[] columnThree = new Card[30];
+            Card[] columnFour = new Card[30];
+            Card[] columnFive = new Card[30];
+            Card[] columnSix = new Card[30];
+            Card[] columnSeven = new Card[30];
+            Card[] stockPile = new Card[24];
+            Card[] drawnStockCards = new Card[24];
+            Card[] suitStackOne = new Card[13];
+            Card[] suitStackTwo = new Card[13];
+            Card[] suitStackThree = new Card[13];
+            Card[] suitStackFour = new Card[13];
+
+            List<Card[]> arrayDeck = new List<Card[]>
+            {
+                columnOne,
+                columnTwo,
+                columnThree,
+                columnFour,
+                columnFive,
+                columnSix,
+                columnSeven,
+                stockPile,
+                drawnStockCards,
+                suitStackOne,
+                suitStackTwo,
+                suitStackThree,
+                suitStackFour
+            };
+
+            foreach (var array in arrayDeck)
+            {
+                int indexTracker = 0;
+                for (int i = 0; i < deck[i].Count; i++)
+                {
+                    foreach (var card in deck[i])
+                    {
+                        array[i] = card;
+                    }
+                    indexTracker++;
+                }
+                
+                for (int j = indexTracker; j < array.Length; j++)
+                {
+                    array[j] = new Card(" . ");
+                }
+            }
+
+            //foreach (var array in arrayDeck)
+            //{
+            //    foreach (var cardSlot in array)
+            //    {
+            //        int i = 0;
+            //        foreach (var card in deck[0])
+            //        {
+            //            array[i] = card;
+            //            i++;
+            //        }
+
+            //        for (int j = i; j < array.Length; j++)
+            //        {
+            //            array[i] = new Card(" . ");
+            //        }
+            //    }
+            //}
+
+            //foreach (var cardSlot in columnOne)
+            //{
+            //    int i = 0;
+            //    foreach (var card in deck[0])
+            //    {
+            //        columnOne[i] = card;
+            //        i++;
+            //    }
+
+            //    for (int j = 1; j < 30; j++)
+            //    {
+            //        columnOne[i] = new Card(" . ");
+            //    }
+            //}
+
+            return arrayDeck;
         }
     }
 }
