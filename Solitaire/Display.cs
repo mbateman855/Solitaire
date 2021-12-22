@@ -17,7 +17,7 @@ namespace Solitaire
                 {
                     if (card.BlankSpace == " . ")
                     {
-                        Console.Write(" ... ");
+                        Console.Write("  ");
                     }
                     else
                     {
@@ -32,11 +32,15 @@ namespace Solitaire
                         };
                         if (card.Suit == "heart")
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.Write($"  {card.Value}♥ ");
+                            Console.ForegroundColor = ConsoleColor.White;
                         };
                         if (card.Suit == "diamond")
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.Write($"  {card.Value}♦ ");
+                            Console.ForegroundColor = ConsoleColor.White;
                         };
                     }
                     cardCounter++;

@@ -12,7 +12,8 @@ namespace Solitaire
         {
             var cards = CardHelper.GetDeck();
             //TestDeck(cards);
-            Deal(cards);
+            //Deal(cards);
+            AllocateCards(cards);
         }
         public static void TestDeck(List<Card> cards)
         {
@@ -21,6 +22,43 @@ namespace Solitaire
                 Console.Write($" | {card.Value}, {card.Color}, {card.Suit}");
             };
         }
+
+        public static void AllocateCards(List<Card> deck)
+        {
+            //creating 20 rows of seven cards to display
+            Card[] rowOne = new Card[7];
+            Card[] rowTwo = new Card[7];
+            Card[] rowThree = new Card[7];
+            Card[] rowFour = new Card[7];
+            Card[] rowFive = new Card[7];
+            Card[] rowSix = new Card[7];
+            Card[] rowSeven = new Card[7];
+            Card[] rowEight = new Card[7];
+            Card[] rowNine = new Card[7];
+            Card[] rowTen = new Card[7];
+            Card[] rowEleven = new Card[7];
+            Card[] rowTwelve = new Card[7];
+            Card[] rowThirteen = new Card[7];
+            Card[] rowFourteen = new Card[7];
+            Card[] rowFifteen = new Card[7];
+            Card[] rowSixteen = new Card[7];
+            Card[] rowSeventeen = new Card[7];
+            Card[] rowEighteen = new Card[7];
+            Card[] rowNineteen = new Card[7];
+            Card[] rowTwenty = new Card[7];
+
+            //creating other sections that have cards
+            Card[] suitStackOne = new Card[13];
+            Card[] suitStackTwo = new Card[13];
+            Card[] suitStackThree = new Card[13];
+            Card[] suitStackFour = new Card[13];
+            Card[] stockPile = new Card[24];
+            Card[] drawnStockPile = new Card[24];
+
+            //putting cards into the arrays
+
+        }
+
 
         public static void Deal(List<Card> deck)
         {

@@ -12,7 +12,7 @@ namespace Solitaire
         public string Color { get; set; }
         public string Suit { get; set; }
         public bool IsFaceUp { get; set; }
-        public string BlankSpace { get; set; }
+        public bool BlankSpace { get; set; }
 
         public Card(int value, string color, string suit)
         {
@@ -22,9 +22,9 @@ namespace Solitaire
             IsFaceUp = false;
         }
 
-        public Card(string blanckSpace)
+        public Card(bool blankSpace)
         {
-            BlankSpace = blanckSpace;
+            BlankSpace = blankSpace;
         }
     }
 }
