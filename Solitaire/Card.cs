@@ -20,6 +20,7 @@ namespace Solitaire
             Color = color;
             Suit = suit;
             IsFaceUp = false;
+            BlankSpace = false;
         }
 
         public Card(bool blankSpace)

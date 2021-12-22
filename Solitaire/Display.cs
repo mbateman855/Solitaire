@@ -15,7 +15,7 @@ namespace Solitaire
             {
                 foreach (var card in deck[i])
                 {
-                    if (card.BlankSpace == " . ")
+                    if (card.BlankSpace)
                     {
                         Console.Write("  ");
                     }
