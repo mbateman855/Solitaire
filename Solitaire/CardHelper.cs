@@ -45,8 +45,11 @@ namespace Solitaire
 
                 if (index == 0)
                 {
-                    randIndex.Add(cards[randCheck].Value);
-                    index++;
+                    if (randCheck < 52)
+                    {
+                        randIndex.Add(cards[randCheck].Value);
+                        index++;
+                    }
                 }
                 else
                 {

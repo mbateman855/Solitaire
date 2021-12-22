@@ -17,7 +17,7 @@ namespace Solitaire
                 {
                     if (card.BlankSpace)
                     {
-                        Console.Write("  ");
+                        Console.Write(" ");
                     }
                     else
                     {
@@ -54,6 +54,37 @@ namespace Solitaire
                 }
             }
         }
+
+        public static void TestLayoutTwo(Card[][] deck)
+        {
+            int subsetTracker = 0;
+            foreach (var subset in deck)
+            {
+                if (subsetTracker < 20)
+                {
+                    foreach (var card in subset)
+                    {
+                        if (card.IsFaceUp)
+                        {
+                            if (!card.BlankSpace)
+                            {
+                                ValueSuitDisplay(card);
+                            }
+                            else
+                            {
+                                Console.Write("    ");
+                            }
+                        }
+                        else
+                        {
+                            Console.Write("....");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                subsetTracker++;
+            }
+        }
         public static void DisplayDeal(List<List<Card>> deck)
         {
             //this deck has already been organized into columns and piles
@@ -79,6 +110,59 @@ namespace Solitaire
         {
             //Console.WriteLine("♡♢♤♧");
             Console.WriteLine("♥ ♦ ♣ ♠");
+        }
+        public static void ValueSuitDisplay(Card card)
+        {
+            //string convertedSuit;
+            string convertedValue;
+
+            if (card.Value == 1)
+            {
+                convertedValue = " A";
+            }
+            else if (card.Value == 10)
+            {
+                //this is the only card that would display two characters instead of one
+                //all of the other values would get a space before the value but 10 will not, this keeps the column formatting consistent
+                convertedValue = "10";
+            }
+            else if (card.Value == 11)
+            {
+                convertedValue = " J";
+            }
+            else if (card.Value == 12)
+            {
+                convertedValue = " Q";
+            }
+            else if (card.Value == 13)
+            {
+                convertedValue = " K";
+            }
+            else
+            {
+                convertedValue = $" {card.Value}";
+            }
+
+            if (card.Suit == "spade")
+            {
+                Console.Write($"{convertedValue}♠ ");
+            };
+            if (card.Suit == "club")
+            {
+                Console.Write($"{convertedValue}♣ ");
+            };
+            if (card.Suit == "heart")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{convertedValue}♥ ");
+                Console.ForegroundColor = ConsoleColor.White;
+            };
+            if (card.Suit == "diamond")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{convertedValue}♦ ");
+                Console.ForegroundColor = ConsoleColor.White;
+            };
         }
     }
 }

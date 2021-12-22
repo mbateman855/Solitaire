@@ -10,11 +10,14 @@ namespace Solitaire
     {
         public static void Start()
         {
+            Console.SetWindowSize(28, 24);
+            //Console.SetWindowPosition(14, 3);
             var cards = CardHelper.GetDeck();
             //TestDeck(cards);
             //Deal(cards);
             var allocatedCards = AllocateCards(cards);
-            TestAllocatedCards(allocatedCards);
+            //TestAllocatedCards(allocatedCards);
+            Display.TestLayoutTwo(allocatedCards);
         }
         public static void TestDeck(List<Card> cards)
         {
@@ -77,6 +80,7 @@ namespace Solitaire
 
             //putting cards into the arrays
             rowOne[0] = deck[0];
+            rowOne[0].IsFaceUp = true;
             for (int i = 1; i < rowOne.Length; i++)
             {
                 //the Card constructor just has a bool for whether it is blank or not
@@ -86,6 +90,7 @@ namespace Solitaire
 
             rowTwo[0] = deck[1];
             rowTwo[1] = deck[2];
+            rowTwo[1].IsFaceUp = true;
 
             for (int i = 2; i < rowTwo.Length; i++)
             {
@@ -95,6 +100,7 @@ namespace Solitaire
             rowThree[0] = deck[3];
             rowThree[1] = deck[4];
             rowThree[2] = deck[5];
+            rowThree[2].IsFaceUp = true;
 
             for (int i = 3; i < rowTwo.Length; i++)
             {
@@ -105,6 +111,7 @@ namespace Solitaire
             rowFour[1] = deck[7];
             rowFour[2] = deck[8];
             rowFour[3] = deck[9];
+            rowFour[3].IsFaceUp = true;
 
             for (int i = 4; i < rowTwo.Length; i++)
             {
@@ -116,6 +123,7 @@ namespace Solitaire
             rowFive[2] = deck[12];
             rowFive[3] = deck[13];
             rowFive[4] = deck[14];
+            rowFive[4].IsFaceUp = true;
 
             for (int i = 5; i < rowTwo.Length; i++)
             {
@@ -128,6 +136,7 @@ namespace Solitaire
             rowSix[3] = deck[18];
             rowSix[4] = deck[19];
             rowSix[5] = deck[20];
+            rowSix[5].IsFaceUp = true;
 
             for (int i = 6; i < rowTwo.Length; i++)
             {
@@ -141,6 +150,7 @@ namespace Solitaire
             rowSeven[4] = deck[25];
             rowSeven[5] = deck[26];
             rowSeven[6] = deck[27];
+            rowSeven[6].IsFaceUp = true;
 
             for (int i = 0; i < rowEight.Length; i++)
             {
