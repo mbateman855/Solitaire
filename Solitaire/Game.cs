@@ -277,6 +277,16 @@ namespace Solitaire
             return allocatedDeck;
         }
 
+        public static void WinCheck(Card[][] allocatedDeck)
+        {
+            if (allocatedDeck[20][12].BlankSpace == false &&
+                allocatedDeck[21][12].BlankSpace == false &&
+                allocatedDeck[22][12].BlankSpace == false &&
+                allocatedDeck[23][12].BlankSpace == false)
+            {
+                Display.WinScreen();
+            }
+        }
 
         //public static void Deal(List<Card> deck)
         //{
@@ -438,7 +448,7 @@ namespace Solitaire
         //            }
         //            indexTracker++;
         //        }
-                
+
         //        for (int j = indexTracker; j < array.Length; j++)
         //        {
         //            array[j] = new Card(" . ");

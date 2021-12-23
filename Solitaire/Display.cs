@@ -164,5 +164,12 @@ namespace Solitaire
                 Console.ForegroundColor = ConsoleColor.White;
             };
         }
+
+        public static void WinScreen()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Congratulations! You've won!");
+        }
     }
 }
