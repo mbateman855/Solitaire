@@ -10,7 +10,7 @@ namespace Solitaire
     {
         public static void Start()
         {
-            Console.SetWindowSize(28, 24);
+            //Console.SetWindowSize(28, 24);
             //Console.SetWindowPosition(14, 3);
             var cards = CardHelper.GetDeck();
             //TestDeck(cards);
